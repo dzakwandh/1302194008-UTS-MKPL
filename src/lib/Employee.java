@@ -24,18 +24,14 @@ public class Employee extends Person {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address,
-			int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+	public Employee(String employeeId, String idNumber, LocalDate dateJoineDate, Person dataPerson) {
 		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.idNumber = idNumber;
-		this.address = address;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
+		this.dateJoined = dateJoined;
+		this.dataPerson = dataPerson;
+
+		childNames = new LinkedList<String>();
+		childIdNumbers = new LinkedList<String>();
 
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
@@ -51,18 +47,18 @@ public class Employee extends Person {
 	public void setMonthlySalary(int grade) {
 		if (grade == 1) {
 			monthlySalary = 3000000;
-			if (isForeigner) {
+			if (dataPerson.getIsForeigner()) {
 				monthlySalary = (int) (3000000 * 1.5);
 			}
 		} else if (grade == 2) {
 			monthlySalary = 5000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
+			if (dataPerson.getIsForeigner()) {
+				monthlySalary = (int) (5000000 * 1.5);
 			}
 		} else if (grade == 3) {
 			monthlySalary = 7000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
+			if (dataPerson.getIsForeigner()) {
+				monthlySalary = (int) (7000000 * 1.5);
 			}
 		}
 	}
