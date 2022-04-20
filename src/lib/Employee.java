@@ -5,24 +5,14 @@ import java.time.Month;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Employee {
-
-	private enum Gender {
-		LakiLaki,
-		Perempuan
-	}
+public class Employee extends Person {
 
 	private String employeeId;
-	private String firstName;
-	private String lastName;
 	private String idNumber;
-	private String address;
 
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
-
-	private boolean isForeigner;
-	private Gender gender; // true = Laki-laki, false = Perempuan
+	// true = Laki-laki, false = Perempuan
 
 	private int monthlySalary;
 	private int otherMonthlyIncome;
