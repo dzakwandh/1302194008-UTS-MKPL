@@ -9,6 +9,7 @@ public class Employee extends Person {
 
 	private String employeeId;
 	private String idNumber;
+	private Person dataPerson;
 
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
@@ -85,10 +86,10 @@ public class Employee extends Person {
 
 		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
 		// bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-		LocalDate date = LocalDate.now();
 
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
+		LocalDate date = LocalDate.now();
+		if (date.getYear() == dateJoined.getDayOfYear()) {
+			monthWorkingInYear = date.getMonthValue() - dateJoined.getDayOfMonth();
 		} else {
 			monthWorkingInYear = 12;
 		}
