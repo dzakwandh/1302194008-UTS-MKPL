@@ -1,6 +1,7 @@
 package lib;
 
 public class Person {
+    // Enumerasi untuk menggantikan tipe boolean gender.
     public enum Gender {
         LakiLaki,
         Perempuan
@@ -13,6 +14,7 @@ public class Person {
     private boolean isForeigner;
     private Gender gender;
 
+    // Add methods Getter and Setter untuk setiap variable di atas.
     public String getFirstName() {
         return firstName;
     }

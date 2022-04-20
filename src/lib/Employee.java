@@ -13,7 +13,6 @@ public class Employee extends Person {
 
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
-	// true = Laki-laki, false = Perempuan
 
 	private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -46,17 +45,17 @@ public class Employee extends Person {
 	 */
 
 	public void setMonthlySalary(int grade) {
-		if (grade == 1) {
+		if (grade == 1) { // Grade 1: 3.000.000 per bulan.
 			monthlySalary = 3000000;
 			if (dataPerson.getIsForeigner()) {
 				monthlySalary = (int) (3000000 * 1.5);
 			}
-		} else if (grade == 2) {
+		} else if (grade == 2) { // Grade 2: 5.000.000 per bulan
 			monthlySalary = 5000000;
 			if (dataPerson.getIsForeigner()) {
 				monthlySalary = (int) (5000000 * 1.5);
 			}
-		} else if (grade == 3) {
+		} else if (grade == 3) { // Grade 3: 7.000.000 per bulan
 			monthlySalary = 7000000;
 			if (dataPerson.getIsForeigner()) {
 				monthlySalary = (int) (7000000 * 1.5);
@@ -84,9 +83,10 @@ public class Employee extends Person {
 
 	public int getAnnualIncomeTax() {
 
-		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
-		// bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-
+		/*
+		 * Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
+		 * bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
+		 */
 		LocalDate date = LocalDate.now();
 		if (date.getYear() == dateJoined.getDayOfYear()) {
 			monthWorkingInYear = date.getMonthValue() - dateJoined.getDayOfMonth();
